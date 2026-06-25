@@ -20,7 +20,7 @@
   <div class="section-inner">
     <h2 class="section-heading">Research Areas</h2>
     <ul class="research-areas-list">
-      {{ range hugo.Data.research_areas }}
+      {{ range site.Data.research_areas }}
       <li>{{ .name }}</li>
       {{ end }}
     </ul>

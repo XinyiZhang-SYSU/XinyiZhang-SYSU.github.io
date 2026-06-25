@@ -1,6 +1,6 @@
 baseURL: "https://e-ad420.github.io/Zhang_xinyi.github.io/"
 title: "Xinyi Zhang"
-locale: en-us
+languageCode: en-us
 outputs:
   home: [HTML, RSS, JSON]
 params:
