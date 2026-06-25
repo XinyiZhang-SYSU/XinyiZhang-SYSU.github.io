@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-photo">
+      <img src="{{ "images/Zhang_Xinyi.jpg" | relURL }}" alt="Portrait of Xinyi Zhang" class="portrait" width="200" height="200">
+    </div>
+    <div class="hero-text">
+      <h1 class="hero-name">Xinyi Zhang</h1>
+      <p class="hero-title">Associate Professor, School of Business, Sun Yat-sen University</p>
+      <p class="hero-email">zhangxy599@mail.sysu.edu.cn</p>
+      <p class="hero-intro">Xinyi Zhang is an Associate Professor at the School of Business, Sun Yat-sen University. He received his Ph.D. in Management (Accounting) from the School of Economics and Management, Tsinghua University. His research interests include accounting and financial regulation, data assets, and artificial intelligence and capital markets.</p>
+      <div class="hero-links">
+        <a href="{{ "bio/" | relURL }}" class="hero-link primary-link">Bio &amp; C.V.</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="research-areas" class="section">
+  <div class="section-inner">
+    <h2 class="section-heading">Research Areas</h2>
+    <ul class="research-areas-list">
+      {{ range hugo.Data.research_areas }}
+      <li>{{ .name }}</li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}

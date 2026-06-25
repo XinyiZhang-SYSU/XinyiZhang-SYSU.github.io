@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale | default "en" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ hugo.Generator }}
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} &mdash; {{ site.Title }}{{ end }}</title>
+  {{ $css := resources.Get "css/custom.css" | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
+  <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+</head>
+<body class="site-body">
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  {{ partial "components/headers/navbar.html" . }}
+  <main id="main-content" class="site-main">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "site_footer.html" . }}
+</body>
+</html>

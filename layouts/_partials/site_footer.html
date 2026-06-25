@@ -1,0 +1,12 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <nav class="footer-nav">
+      <ul class="footer-links">
+        {{ range site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name | safeHTML }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+    <p class="footer-credit">Created using <a href="https://garyking.org/mysite">GaryKing.org/mysite</a></p>
+  </div>
+</footer>

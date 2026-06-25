@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div class="section">
+  <div class="section-inner">
+    <h1 class="page-title">{{ .Title }}</h1>
+    <div class="prose">
+      {{ .Content }}
+    </div>
+
+    {{ $pubPages := where site.RegularPages "Section" "publication" }}
+    {{ if $pubPages }}
+    <div class="pub-list">
+      {{ range $pubPages.ByDate.Reverse }}
+      <article class="pub-item" data-tab="articles" data-year="{{ .Date.Format "2006" }}" data-types='["journal_article"]'>
+        <div class="pub-citation">
+          <span class="pub-authors">{{ delimit .Params.authors ", " }}</span>
+          <span class="pub-year">({{ .Date.Format "2006" }})</span>
+          <span class="pub-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+          <span class="pub-venue">{{ .Params.publication }}</span>
+        </div>
+        {{ if .Params.abstract }}
+        <details class="pub-abstract">
+          <summary>Abstract</summary>
+          <p>{{ .Params.abstract }}</p>
+        </details>
+        {{ end }}
+        <div class="pub-links">
+          {{ range .Params.links }}
+          <a href="{{ .url }}" class="pub-link">{{ .name }}</a>
+          {{ end }}
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,18 @@
+article:
+  btn_article: "Publisher's Version"
+  btn_pdf: "Article (PDF)"
+  btn_supp: "Supplementary Material"
+  abstract: "Abstract"
+  bibtex: "BibTeX"
+
+site:
+  page_not_found: "Page Not Found"
+  back_to_home: "Back to Home"
+  search: "Search"
+  close: "Close"
+  writings: "Publications"
+  talks: "Presentations"
+  software: "Software"
+  people: "People"
+  contact: "Contact"
+  teaching: "Teaching"

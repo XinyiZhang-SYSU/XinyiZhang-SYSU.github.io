@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Accounting and Financial Regulation",
+    "subcategories": [
+      "accounting regulation",
+      "financial regulation",
+      "information disclosure",
+      "earnings management"
+    ]
+  },
+  {
+    "name": "Corporate Finance and Governance",
+    "subcategories": [
+      "corporate governance",
+      "managerial incentives",
+      "compensation contracts",
+      "leverage regulation",
+      "convertible bonds",
+      "capital market regulation"
+    ]
+  },
+  {
+    "name": "Data Assets",
+    "subcategories": [
+      "data assets",
+      "digital finance",
+      "intangible assets"
+    ]
+  },
+  {
+    "name": "AI and Capital Markets",
+    "subcategories": [
+      "artificial intelligence",
+      "capital markets",
+      "accounting information"
+    ]
+  }
+]

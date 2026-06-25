@@ -1,0 +1,37 @@
+{{ define "main" }}
+<article class="section">
+  <div class="section-inner">
+    <nav class="breadcrumbs">
+      <a href="{{ site.Home.RelPermalink }}">Home</a> / <a href="{{ "publication/" | relURL }}">Publications</a> / {{ .Title }}
+    </nav>
+
+    <h1 class="page-title">{{ .Title }}</h1>
+
+    <p class="pub-meta">
+      {{ delimit .Params.authors ", " }}<br>
+      <em>{{ .Params.publication }}</em>
+    </p>
+
+    {{ if .Params.abstract }}
+    <div class="pub-abstract-block">
+      <h2>Abstract</h2>
+      <p>{{ .Params.abstract }}</p>
+    </div>
+    {{ end }}
+
+    {{ if .Params.links }}
+    <div class="pub-links-row">
+      {{ range .Params.links }}
+      <a href="{{ .url }}" class="btn-primary">{{ .name }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="prose">
+      {{ .Content }}
+    </div>
+
+    {{ partial "related_finder.html" . }}
+  </div>
+</article>
+{{ end }}

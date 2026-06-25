@@ -1,0 +1,56 @@
+baseURL: "https://e-ad420.github.io/Zhang_xinyi.github.io/"
+title: "Xinyi Zhang"
+locale: en-us
+outputs:
+  home: [HTML, RSS, JSON]
+params:
+  appearance:
+    theme_day: custom
+    theme_night: custom
+    color_mode: light
+    font: native
+    font_size: L
+  header:
+    navbar:
+      enable: true
+      show_search: true
+      logo:
+        text: "XINYI ZHANG"
+  features:
+    search:
+      provider: flexsearch
+  extensions:
+    css:
+      - css/custom.css
+taxonomies:
+  tag: tags
+  category: categories
+  publication_type: publication_types
+  author: authors
+permalinks:
+  publication: /publication/:slug/
+  talk: /talk/:slug/
+  software: /software/:slug/
+menu:
+  main:
+    - name: Bio & C.V.
+      url: /bio/
+      weight: 10
+    - name: Research Areas
+      url: "/#research-areas"
+      weight: 20
+    - name: Publications
+      url: /publication/
+      weight: 30
+    - name: Teaching
+      url: /teaching/
+      weight: 40
+    - name: Projects
+      url: /projects/
+      weight: 50
+    - name: Awards &amp; Service
+      url: /awards/
+      weight: 60
+    - name: Contact
+      url: /contact/
+      weight: 70

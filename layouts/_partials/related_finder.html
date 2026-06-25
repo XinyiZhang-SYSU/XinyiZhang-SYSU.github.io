@@ -1,0 +1,41 @@
+{{/* related_finder.html - Auto cross-linking partial */}}
+{{ $current := . }}
+{{ $pubPages := where site.RegularPages "Section" "publication" }}
+{{ $related := slice }}
+
+{{ range $pubPages }}
+  {{ if ne .RelPermalink $current.RelPermalink }}
+    {{ $score := 0 }}
+    {{ $curTags := $current.Params.tags | default slice }}
+    {{ $otherTags := .Params.tags | default slice }}
+    {{ range $ct := $curTags }}
+      {{ if in $otherTags $ct }}
+        {{ $score = add $score 2 }}
+      {{ end }}
+    {{ end }}
+    {{ $curAuthors := $current.Params.authors | default slice }}
+    {{ $otherAuthors := .Params.authors | default slice }}
+    {{ range $ca := $curAuthors }}
+      {{ if in $otherAuthors $ca }}
+        {{ $score = add $score 3 }}
+      {{ end }}
+    {{ end }}
+    {{ if ge $score 3 }}
+      {{ $related = $related | append (dict "page" . "score" $score) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if $related }}
+<div class="see-also">
+  <h2 class="see-also-heading">See Also</h2>
+  <ul class="see-also-list">
+    {{ range sort $related "score" "desc" | first 6 }}
+    <li class="see-also-item">
+      <span class="see-also-label">[Paper]</span>
+      <a href="{{ .page.RelPermalink }}">{{ .page.Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
