@@ -36,9 +36,12 @@ menu:
     - name: Home
       url: "/"
       weight: 10
+    - name: Bio
+      url: "/#bio"
+      weight: 20
     - name: Research
       url: "/#research"
-      weight: 20
+      weight: 30
     - name: Teaching
       url: "/#teaching"
-      weight: 30
+      weight: 40
