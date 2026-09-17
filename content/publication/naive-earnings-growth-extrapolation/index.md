@@ -1,5 +1,5 @@
 ---
-title: "Naive Earnings Growth Extrapolation"
+title: "Presentation-Amplified Fundamental Extrapolation"
 date: 2025-01-01
 authors: ["Chenyu Cui", "Frank Weikai Li", "Xinyi Zhang"]
 publication_types: ["report"]
